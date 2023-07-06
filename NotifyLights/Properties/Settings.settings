@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NotifyLights.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="mqttHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">broker.hivemq.com</Value>
+    </Setting>
+    <Setting Name="mqttPort" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1883</Value>
+    </Setting>
+    <Setting Name="mqttColdWhiteTopic" Type="System.String" Scope="User">
+      <Value Profile="(Default)">wawrov/sideLight/CWB</Value>
+    </Setting>
+    <Setting Name="mqttWarmWhiteTopic" Type="System.String" Scope="User">
+      <Value Profile="(Default)">wawrov/sideLight/WWB</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
