@@ -22,7 +22,7 @@ namespace NotifyLights
             mqttPortNumericUpDown.Value = port;
             coldWhiteTopicTextBox.Text = Properties.Settings.Default["mqttColdWhiteTopic"].ToString();
             warmWhiteTopicTextBox.Text = Properties.Settings.Default["mqttWarmWhiteTopic"].ToString();
-            
+
             notifyIconContextMenu = new ContextMenuStrip();
 
             notifyIconContextMenu.Items.Add("Wawrow 2023");
@@ -36,7 +36,7 @@ namespace NotifyLights
             notifyIconContextMenu.Items[2].Click += new System.EventHandler(notifyIconContextMenu_SendValueWW50_Click);
             notifyIconContextMenu.Items[3].Click += new System.EventHandler(notifyIconContextMenu_SendValueWW25_Click);
             notifyIconContextMenu.Items[4].Click += new System.EventHandler(notifyIconContextMenu_ExitItem_Click);
-            
+
             notifyIcon1.ContextMenuStrip = notifyIconContextMenu;
             notifyIcon1.Visible = true;
             this.ShowInTaskbar = false;
@@ -127,6 +127,16 @@ namespace NotifyLights
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
             notifyIcon1.Visible = false;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                notifyIcon1.Visible = true;
+                this.Hide();
+                e.Cancel = true;
+            }
         }
     }
 }

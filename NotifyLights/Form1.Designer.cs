@@ -236,6 +236,7 @@
             MaximizeBox = false;
             Name = "Form1";
             Text = "Side Lights Settings";
+            FormClosing += Form1_FormClosing;
             Resize += Form1_Resize;
             ((System.ComponentModel.ISupportInitialize)mqttPortNumericUpDown).EndInit();
             panel1.ResumeLayout(false);
